@@ -9,7 +9,7 @@ export const parse = (
 ): Feed => {
   const root = htmlParser(html);
 
-  const title = root.querySelector("title").rawText;
+  const title = root.querySelector("title").rawText.trim();
 
   const items = root
     .querySelectorAll(itemSelector)
@@ -26,8 +26,8 @@ export const parse = (
       }
 
       return {
-        title: title.rawText,
-        url: link.attributes.href,
+        title: title.rawText.trim(),
+        url: link.attributes.href.trim(),
       };
     })
     .filter(Boolean) as FeedItem[];

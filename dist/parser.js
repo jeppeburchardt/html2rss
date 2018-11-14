@@ -5,7 +5,7 @@ exports.parse = function (html, itemSelector, titleSelctor, linkSelector) {
     if (titleSelctor === void 0) { titleSelctor = 'h1, h2, h3, h4'; }
     if (linkSelector === void 0) { linkSelector = 'a'; }
     var root = node_html_parser_1.parse(html);
-    var title = root.querySelector("title").rawText;
+    var title = root.querySelector("title").rawText.trim();
     var items = root
         .querySelectorAll(itemSelector)
         .map(function (node) {
@@ -18,8 +18,8 @@ exports.parse = function (html, itemSelector, titleSelctor, linkSelector) {
             return undefined;
         }
         return {
-            title: title.rawText,
-            url: link.attributes.href,
+            title: title.rawText.trim(),
+            url: link.attributes.href.trim(),
         };
     })
         .filter(Boolean);
