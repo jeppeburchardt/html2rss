@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 import * as commandLineArgs from "command-line-args";
 import { parse } from './parser';
 import { build } from './builder';
