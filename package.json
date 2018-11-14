@@ -1,0 +1,25 @@
+{
+  "name": "rrsify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w & mocha --reporter spec --watch",
+    "test": "mocha --reporter spec"
+  },
+  "bin": "./dist/cli.js",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/command-line-args": "^5.0.0",
+    "@types/node": "^10.12.6",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "typescript": "^3.1.6"
+  },
+  "dependencies": {
+    "command-line-args": "^5.0.2",
+    "node-html-parser": "^1.1.11"
+  }
+}
