@@ -5,8 +5,6 @@ export const build = (feed: Feed) => {
     feed.title
   }</title>${feed.items.map(
     item =>
-      `<item><title>${item.title}</title><link>${item.url}</link><image><url>${
-        item.image
-      }</url></image></item>`
-  )}</channel>`;
+      `<item><title>${item.title}</title><link>${item.url}</link></item>`
+  ).join('')}</channel>`;
 };

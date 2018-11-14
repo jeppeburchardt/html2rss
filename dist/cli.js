@@ -7,11 +7,10 @@ var optionDefinitions = [
     { name: "itemSelector", alias: "i", type: String },
     { name: "titleSelector", alias: "t", type: String },
     { name: "linkSelector", alias: "l", type: String },
-    { name: "imageSelector", alias: "g", type: String }
 ];
 var options = commandLineArgs(optionDefinitions);
 process.stdin.resume();
 process.stdin.setEncoding("utf8");
 process.stdin.on("data", function (data) {
-    process.stdout.write(builder_1.build(parser_1.parse(data, options.itemSelector, options.titleSelector, options.linkSelector, options.imageSelector)));
+    process.stdout.write(builder_1.build(parser_1.parse(data, options.itemSelector, options.titleSelector, options.linkSelector)));
 });

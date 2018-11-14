@@ -7,19 +7,19 @@ const html =
 
 describe("parse", () => {
   it("should parse page title from head tag", () => {
-    var result = parse(html, "li", "strong", "a", "p");
+    var result = parse(html, "li", "strong", "a");
     expect(result.title).to.equal("Page Title");
   });
   it("should parse 3 items", () => {
-    var result = parse(html, "li", "strong", "a", "p");
+    var result = parse(html, "li", "strong", "a");
     expect(result.items.length).to.equal(3);
   });
   it("should parse an item with a header", () => {
-    var result = parse(html, "li", "strong", "a", "p");
+    var result = parse(html, "li", "strong", "a");
     expect(result.items[0].title).to.equal("Title 1");
   });
   it("should parse an item with a header", () => {
-    var result = parse(html, "li", "strong", "a", "p");
+    var result = parse(html, "li", "strong", "a");
     expect(result.items[0].url).to.equal("http://somewhere.com/item/1");
     expect(result.items[1].url).to.equal("http://somewhere.com/item/2");
     expect(result.items[2].url).to.equal("http://somewhere.com/item/3");
