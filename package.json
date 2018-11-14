@@ -1,15 +1,16 @@
 {
   "name": "html2rss",
   "version": "1.0.0",
-  "description": "",
-  "main": "lib/index.ts",
+  "description": "convert HTML to RSS",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "dev": "tsc -w & mocha --reporter spec --watch",
     "test": "mocha --reporter spec"
   },
-  "bin": "./dist/cli.js",
-  "author": "",
+  "bin": "dist/cli.js",
+  "author": "Jeppe Burchardt",
   "license": "ISC",
   "devDependencies": {
     "@types/command-line-args": "^5.0.0",
