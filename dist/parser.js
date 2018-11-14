@@ -5,7 +5,8 @@ exports.parse = function (html, itemSelector, titleSelctor, linkSelector) {
     if (titleSelctor === void 0) { titleSelctor = 'h1, h2, h3, h4'; }
     if (linkSelector === void 0) { linkSelector = 'a'; }
     var root = node_html_parser_1.parse(html);
-    var title = root.querySelector("title").rawText.trim();
+    var titleNode = root.querySelector("title");
+    var title = titleNode ? titleNode.rawText.trim() : 'Unknown Feed';
     var items = root
         .querySelectorAll(itemSelector)
         .map(function (node) {

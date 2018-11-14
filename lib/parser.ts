@@ -8,8 +8,8 @@ export const parse = (
   linkSelector: string = 'a',
 ): Feed => {
   const root = htmlParser(html);
-
-  const title = root.querySelector("title").rawText.trim();
+  const titleNode = root.querySelector("title");
+  const title = titleNode ? titleNode.rawText.trim() : 'Unknown Feed';
 
   const items = root
     .querySelectorAll(itemSelector)
